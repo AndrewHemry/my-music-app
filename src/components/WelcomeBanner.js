@@ -6,8 +6,11 @@ import Typography from '@mui/material/Typography';
 export default function User(props) {
     return (
       // Use props below to pull in the user value
-      <Typography variant="h5" component="div">
-          Welcome User
-      </Typography>
+      <div className='welcomeBanner'>
+        <Typography variant="h5" component="div">
+            Welcome User
+        </Typography>
+      </div>
+
     )
 }

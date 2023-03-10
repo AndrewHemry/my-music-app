@@ -1,4 +1,5 @@
 import * as React from 'react';
+import '../App.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -54,17 +55,21 @@ export default function CustomCard2( { title, body, component: Component, handle
     }
 
   return (
-    <Card sx={{ maxWidth: 275 }}>
-      <CardContent>
-        <Typography variant="h5" component="div">
-            {title}
-        </Typography>
+    <li className='customCard_LI'>
+        <Card sx={{ maxWidth: 275 }}>
+            <CardContent>
+                <div className='cardTextBody'>
+                <Typography variant="h5" component="div">
+                    {title}
+                </Typography>
 
-        <Typography variant="body2">
-            {body}
-        </Typography>
-        {renderContent()}
-      </CardContent>
-    </Card>
+                <Typography variant="body2">
+                    {body}
+                </Typography>
+                {renderContent()}
+                </div>
+            </CardContent>
+        </Card>
+    </li>
   );
 }

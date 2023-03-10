@@ -16,7 +16,7 @@ const bull = (
   </Box>
 );
 
-export default function CustomCard( { title, body, component: Component, handleChange} ) {
+export default function CustomCard( { title, body, component: Component, handleChange, state, setState} ) {
   return (
     <Card sx={{ maxWidth: 275 }}>
       <CardContent>
@@ -31,9 +31,11 @@ export default function CustomCard( { title, body, component: Component, handleC
 
       <CardActions>
         <Component 
-          defaultValue={50}
-          defaultChecked
-          onChange={(e) => handleChange(e.target.checked)}
+          // defaultValue={50}
+          // defaultChecked
+          // onChange={(e) => handleChange(e.target.checked)}
+          state={state}
+          setState={setState}
         />
       </CardActions>
     </Card>

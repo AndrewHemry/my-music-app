@@ -5,8 +5,10 @@ import Typography from '@mui/material/Typography';
 
 export default function SystemNotifications() {
     return (
+    <div className='systemNotification'>
         <Typography variant="h5" component="div">
             System Notifications:
         </Typography>
+    </div>
     )
 }

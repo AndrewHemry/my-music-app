@@ -1,3 +1,4 @@
+import './App.css';
 import { useState } from 'react';
 import Header from './components/Header';
 import Login from './components/Login';
@@ -5,6 +6,11 @@ import Login from './components/Login';
 import WelcomeBanner from './components/WelcomeBanner';
 import CustomCard2 from './components/CustomCard2';
 import SystemNotifications from './components/SystemNotifications';
+import CustomCard from './components/CustomCard';
+import Select from './components/Select'
+
+// import { FormControl, Select, Slider, MenuItem, Switch, InputLabel, Box } from '@mui/material';
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -17,13 +23,11 @@ function App() {
   // TO handle volume change
   const handleSliderChange = (event, value) => {
     setVolume(value)
-    console.log("Slider changed to", value)
   }
 
   // // TO handle drop down change
   const handleDropdownChange = (event) => {
     setQuality(event.target.value)
-    console.log("Dropdown change to", event.target.value)
   }
 
   // Array for Quality Options
@@ -36,31 +40,32 @@ function App() {
         <>
         <WelcomeBanner/>
         {/* <Dashboard /> */}
-        <CustomCard2 
-          title="Online Mode" 
-          body="Is this application connected to the internet?"
-          type="toggle"
-          text="Toggle"
-          handleChange={setOnline}
-        />
+        <ul className='customCard'>
+          <CustomCard2 
+            title="Online Mode" 
+            body="Is this application connected to the internet?"
+            type="toggle"
+            text="Toggle"
+            handleChange={setOnline}
+          />
 
-        <CustomCard2 
-          title="Master Volume" 
-          body="Overrides all other sound settings in this application"
-          type="slider"
-          text="Slider"
-          onSliderChange={handleSliderChange}
-        />
+          <CustomCard2 
+            title="Master Volume" 
+            body="Overrides all other sound settings in this application"
+            type="slider"
+            text="Slider"
+            onSliderChange={handleSliderChange}
+          />
 
-        <CustomCard2 
-          title="Sound Quality" 
-          body="Manually control the music qualty in the event of poor connection"
-          type="dropdown"
-          text="Dropdown"
-          onDropdownChange={handleDropdownChange}
-          dropDownOptions={["Normal", "High", "Low"]}
-        />
-
+          <CustomCard2 
+            title="Sound Quality" 
+            body="Manually control the music qualty in the event of poor connection"
+            type="dropdown"
+            text="Dropdown"
+            onDropdownChange={handleDropdownChange}
+            dropDownOptions={["Normal", "High", "Low"]}
+          />
+        </ul>
         <SystemNotifications />
 
 

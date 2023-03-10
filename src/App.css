@@ -1,8 +1,36 @@
-/* .App {
+.App {
+  text-align: center;
+  width: 100%;
+}
+
+.customCard {
+  display: inline-flex;
+  list-style-type: none;
+  height:350px;
+}
+
+.customCard_LI {
+  height: 125px;
+  margin: 50px;
+}
+
+.header {
+  text-align: left;
+  width: 100%;
+}
+
+.systemNotification {
   text-align: center;
 }
 
-.App-logo {
+.welcomeBanner {
+  margin-top: 25px;
+}
+
+.cardTextBody {
+  height: 150px;
+}
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
